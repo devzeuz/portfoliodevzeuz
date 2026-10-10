@@ -1,248 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="about.html" />
-    <link rel="stylesheet" href="project.html" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="stylesheet" href="../fonts-babr/css/all.css" />
+</head>
 
-    <link rel="stylesheet" href="./output.css" />
-    <link rel="stylesheet" href="../fonts-babr/css/all.css" />
-    <title>About Page</title>
-  </head>
-  <body class="transition ease-in-out delay-150">
-    <!-- MOBILE VIEW NAV BAR -->
+<body class="transition ease-in-out delay-150 min-h-screen flex flex-col justify-between">
+  <!-- NAVIGATION BAR -->
+  <header
+    class="h-24 sm:h-28 flex justify-between items-center px-6 sm:px-10 md:px-14 bg-[hsl(206,31%,90%)]/95 backdrop-blur-md sticky top-0 z-30 shadow-sm border-b border-[#9DB2BF]/30">
+    <a href="/dist/index.html"
+      class="font-bold text-[#27374D] text-3xl tracking-tight hover:text-[#526D82] transition-colors">
+      Success
+    </a>
 
-    <div
-      class="h-28 flex justify-between items-center p-7 md:p-9 bg-[hsl(206,31%,90%)] sticky top-0 z-10"
-    >
-      <div class="font-bold text-[#27374D] text-3xl">About</div>
-
-      <div class="">
-        <ul
-          class="hidden sm:flex flex-row space-x-5 font-bold text-xl cursor-pointer"
-        >
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="./about.html">
-              <i class="fa fa-house"></i><span>Home</span>
-            </a>
-          </li>
-
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="/dist/about.html">
-              <i class="fa-solid fa-user"></i> <span>About 1</span></a
-            >
-          </li>
-
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="./project.html">
-              <i class="fa-solid fa-building"></i><span>Projects</span>
-            </a>
-          </li>
-
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="#">
-              <i class="fa-solid fa-file"></i><span>Resume</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div
-        class="text-[#27374D] hover:text-[#526D82] sm:justify-end cursor-pointer md:hidden"
-        id="hamburger"
-      >
-        <i class="fa fa-hamburger"></i>
-      </div>
-    </div>
-
-    <!-- DESKTOP VIEW NAV BAR -->
-    <div
-      class="md:hidden hidden flex flex-col items-center bg-[#DDE6ED] min-h-screen sticky top-28"
-      id="ul"
-    >
-      <ul class="mt-44 space-y-6">
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="./about.html">
-            <i class="fa fa-house"></i><span>Home</span>
-          </a>
+    <!-- DESKTOP NAV ITEMS -->
+    <nav class="hidden sm:block">
+      <ul class="flex flex-row space-x-7 lg:space-x-9 font-bold text-lg md:text-xl cursor-pointer">
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="/dist/index.html">Home</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="/dist/about.html">
-            <i class="fa-solid fa-user"></i><span>About</span>
-          </a>
+        <li class="text-[#27374D] border-b-2 border-[#27374D] pb-0.5">
+          <a href="/dist/about.html">About</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="./project.html">
-            <i class="fa-solid fa-building"></i><span>Projects</span>
-          </a>
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="/dist/project.html">Projects</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="#"> <i class="fa-solid fa-file"></i><span>Resume</span> </a>
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="#">Resume</a>
         </li>
       </ul>
+    </nav>
 
-      <footer
-        class="bg-[#DDE6ED] text-[#27374D] pt-36 p-2 flex flex-col items-center text-sm md:flex-row md:justify-between"
-      >
-        <p>Designed & Developed by Socee</p>
-        copyright &copy; 2023 Bd.
+    <!-- MOBILE HAMBURGER BUTTON -->
+    <button type="button" aria-label="Toggle navigation menu"
+      class="text-[#27374D] hover:text-[#526D82] text-2xl cursor-pointer sm:hidden focus:outline-none" id="hamburger">
+      <i class="fa fa-hamburger"></i>
+    </button>
+  </header>
 
-        <ul class="flex flex-row space-x-9">
-          <li
-            class="text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
-          >
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </li>
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="hidden flex-col items-center bg-[#DDE6ED] min-h-screen sticky top-24 z-20" id="ul">
+    <ul class="mt-28 space-y-7 text-center font-bold text-2xl">
+      <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+        <a href="/dist/index.html">Home</a>
+      </li>
 
-          <li
-            class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-          >
-            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-          </li>
+      <li class="text-[#526D82] font-extrabold">
+        <a href="/dist/about.html">About</a>
+      </li>
 
-          <li
-            class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-          >
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-        </ul>
-      </footer>
+      <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+        <a href="/dist/project.html">Projects</a>
+      </li>
+
+      <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+        <a href="#">Resume</a>
+      </li>
+    </ul>
+
+    <div class="mt-24 flex flex-col items-center space-y-4">
+      <ul class="flex flex-row space-x-6">
+        <li class="text-[#9DB2BF] bg-[#27374D] p-3 rounded-xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition">
+          <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com"
+            title="soceeenin102@gmail.com">
+            <i class="fa-solid fa-envelope text-lg"></i>
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <section class="mt-16 flex flex-row justify-center p-9">
-      <div>
-        <ul class="flex sm:flex flex-col space-y-5 md:hidden mt-5">
-          <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
-          >
-            <a href="#">
-              <i class="fa fa-home-user"></i>
-            </a>
-          </li>
+  <main class="flex-grow max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-10 sm:py-14 space-y-16 sm:space-y-20">
+    <section
+      class="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-14 bg-[#DDE6ED]/60 backdrop-blur-sm p-6 sm:p-10 rounded-3xl border border-[#9DB2BF]/40 shadow-sm">
+      <div class="flex-1 space-y-5 text-center md:text-left">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#27374D] tracking-tight leading-tight">
+          Hi! I'm <span class="text-[#526D82]">Success</span>
+        </h1>
 
-          <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
-          >
-            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-          </li>
+        <p class="text-xl sm:text-2xl font-bold text-[#526D82]">
+          Systems &amp; Software Engineer
+        </p>
 
-          <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
-          >
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-        </ul>
+        <p class="text-lg sm:text-xl text-[#27374D] leading-relaxed">
+          I build automated cloud infrastructure, administer Linux systems, and develop reliable software. With a focus
+          on Infrastructure as Code (Terraform) and shell automation, I design scalable, reproducible systems built for
+          high availability.
+        </p>
+
+        <div class="flex flex-wrap gap-2 justify-center md:justify-start pt-2">
+          <span class="px-3 py-1 bg-[#27374D] text-[#DDE6ED] text-sm rounded-lg font-semibold shadow-sm">
+            Terraform
+          </span>
+          <span class="px-3 py-1 bg-[#27374D] text-[#DDE6ED] text-sm rounded-lg font-semibold shadow-sm">
+            Bash Scripting
+          </span>
+          <span class="px-3 py-1 bg-[#27374D] text-[#DDE6ED] text-sm rounded-lg font-semibold shadow-sm">
+            Linux Administration
+          </span>
+          <span class="px-3 py-1 bg-[#27374D] text-[#DDE6ED] text-sm rounded-lg font-semibold shadow-sm">
+            Infrastructure as Code
+          </span>
+          <span class="px-3 py-1 bg-[#27374D] text-[#DDE6ED] text-sm rounded-lg font-semibold shadow-sm">
+            Technical Research
+          </span>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+          <a href="/dist/project.html"
+            class="px-6 py-3 bg-[#27374D] text-[#DDE6ED] rounded-xl font-bold text-lg hover:bg-[#526D82] transition-colors shadow-md">
+            View Projects
+          </a>
+          <a href="#connect"
+            class="px-6 py-3 bg-[#DDE6ED] text-[#27374D] rounded-xl font-bold text-lg border-2 border-[#27374D] hover:bg-[#9DB2BF]/30 transition-colors">
+            Let's Connect
+          </a>
+        </div>
       </div>
 
-      <div
-        class="flex flex-col items-center md:flex-row-reverse md:px-36 md:justify-between"
-      >
-        <img
-          src="../images/3d-view-laptop-device.jpg"
-          alt="photo"
-          class="transition ease-in delay-300 rounded-full w-40 sm:w-40 md:w-96 border-solid border-4 border-[#9DB2BF] hover:border-[#27374D]"
-        />
+      <!-- PHOTO PROVISION
+      <div class="flex-shrink-0 flex flex-col items-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-1.5 bg-gradient-to-r from-[#27374D] to-[#526D82] rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-300">
+          </div>
+          <img src="../images/3d-view-laptop-device.jpg" alt="Success - DevZeuz"
+            class="relative rounded-3xl w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 object-cover border-4 border-[#9DB2BF] group-hover:border-[#27374D] transition duration-300 shadow-xl" />
+        </div>
+      </div>
+      -->
+    </section>
 
-        <div class="flex flex-col items-center mt-11">
-          <h1 class="text-[#27374D] font-bold text-5xl cursor-pointer">
-            Hi! i'm Success
-          </h1>
+    <section class="rounded-2xl overflow-hidden shadow-xl border border-[#526D82]/30 bg-[#27374D]">
+      <div class="bg-[#1e2a3b] px-4 py-3 flex items-center justify-between border-b border-[#526D82]/40">
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+          <span class="ml-2 text-xs font-mono text-[#9DB2BF]">devzeuz@infra-controller: ~</span>
+        </div>
+        <span class="text-xs font-mono text-[#9DB2BF]">bash v5.2</span>
+      </div>
 
-          <p class="text-[#9DB2BF]">frontend developer</p>
+      <div class="p-6 font-mono text-sm sm:text-base space-y-4 text-[#DDE6ED]">
+        <div>
+          <span class="text-emerald-400 font-bold">$</span>
+          <span class="text-white font-semibold"> whoami --details</span>
+          <p class="text-[#9DB2BF] mt-1 pl-4">
+            &gt; Name: Success (@devzeuz) | Role: Systems &amp; Software Engineer
+          </p>
+        </div>
 
-          <div class="text-center text-xl text-[#27374D]">
-            <p class="mb-4">
-                Hello! I'm a passionate front-end developer with a strong foundation in computer science, having graduated with a degree in the field. I have honed my skills through an internship at HNG, where I gained practical experience and worked on real-world projects. My expertise includes coding in React and vanilla JavaScript, and I excel in using Tailwind CSS to create responsive and visually appealing user interfaces.
+        <div>
+          <span class="text-emerald-400 font-bold">$</span>
+          <span class="text-white font-semibold"> cat /etc/proficiencies.conf</span>
+          <div class="text-[#DDE6ED] mt-1 pl-4 space-y-1">
+            <p><span class="text-[#9DB2BF]">IAC_ENGINE=</span>"Terraform (Modular HCL, Remote State Locks, Multi-Cloud)"
             </p>
-            <p class="mb-4">
-                During my internship, I collaborated with cross-functional teams to build and optimize web applications, ensuring a seamless user experience. I am proficient in modern web development tools and practices, including version control with Git, package management with npm, and task automation with tools like Webpack and Gulp.
+            <p><span class="text-[#9DB2BF]">SHELL_AUTOMATION=</span>"Bash Scripting (POSIX, Task Hooks, Sed &amp; Awk
+              Pipelines)"</p>
+            <p><span class="text-[#9DB2BF]">SYSTEMS_CORE=</span>"Linux Administration (Systemd, Hardening, Storage,
+              Networking)"</p>
+            <p><span class="text-[#9DB2BF]">METHODOLOGY=</span>"Infrastructure as Code (Declarative, Immutable, GitOps)"
             </p>
-            <p class="mb-4">
-                My commitment to continuous learning drives me to stay updated with the latest trends and technologies in web development. I actively participate in online coding communities and contribute to open-source projects, which has helped me refine my coding skills and stay ahead in the rapidly evolving tech landscape.
-            </p>
-            <p class="mb-4">
-                When I'm not coding, I enjoy exploring new technologies, contributing to tech blogs, and attending industry conferences. I am also passionate about mentoring budding developers and sharing my knowledge to help others grow in their careers.
-            </p>
-            <p class="mb-4">
-                Let's connect and create something amazing together!
-            </p>
+            <p><span class="text-[#9DB2BF]">ANALYSIS=</span>"Technical Research (Tooling Benchmarks, System Internals,
+              Whitepapers)"</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-emerald-400 font-bold">$</span>
+          <span class="text-white font-semibold"> terraform plan -out=infra.tfplan &amp;&amp;
+            ./scripts/validate.sh</span>
+          <p class="text-emerald-400 mt-1 pl-4">
+            [SUCCESS] All infrastructure codified, validated, and ready for deployment.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="flex flex-col items-center space-y-8">
-      <p class="text-3xl font-bold text-[#27374D]">FIND ME ON</p>
+    <section class="space-y-8">
+      <div class="text-center space-y-3">
+        <div
+          class="inline-block px-4 py-1 rounded-full bg-[#DDE6ED] text-[#27374D] font-bold text-sm border border-[#9DB2BF]/60 tracking-wider uppercase">
+          Specialized Skillset
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#27374D]">
+          Core Proficiencies
+        </h2>
+        <p class="text-[#526D82] text-lg sm:text-xl max-w-2xl mx-auto">
+          Practical, in-depth expertise across infrastructure provisioning, system automation, Linux internals, and
+          technical inquiry.
+        </p>
+      </div>
 
-      <ul class="flex flex-row space-x-9">
-        <li
-          class="text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
-        >
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-[#9DB2BF]/50 hover:border-[#27374D] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="p-3 bg-[#27374D] text-[#DDE6ED] rounded-xl text-lg font-mono font-bold group-hover:bg-[#526D82] transition-colors">
+                TF
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#526D82] bg-white/70 px-2.5 py-1 rounded-full border border-[#9DB2BF]/40">
+                Provisioning
+              </span>
+            </div>
 
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-        </li>
+            <h3 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors">
+              Terraform
+            </h3>
 
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-      </ul>
-      <p class="text-[#9DB2BF] text-xl">
-        Feel free to <span class="text-[#27374D]">connect</span> with me...
-      </p>
+            <p class="text-[#27374D] text-base leading-relaxed">
+              Expertise in declarative cloud architecture using HashiCorp Configuration Language (HCL). Writing
+              reusable, DRY module structures, managing remote state backends with state locking, handling workspaces,
+              and remediating configuration drift.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#9DB2BF]/40">
+            <p class="text-xs font-bold text-[#526D82] uppercase tracking-wider mb-2">Key Competencies:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">HCL
+                Modules</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Remote
+                State</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">State
+                Locking</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Drift
+                Remediation</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-[#9DB2BF]/50 hover:border-[#27374D] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="p-3 bg-[#27374D] text-[#DDE6ED] rounded-xl text-lg font-mono font-bold group-hover:bg-[#526D82] transition-colors">
+                SH
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#526D82] bg-white/70 px-2.5 py-1 rounded-full border border-[#9DB2BF]/40">
+                Scripting
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors">
+              Bash Scripting
+            </h3>
+
+            <p class="text-[#27374D] text-base leading-relaxed">
+              Writing robust POSIX and Bash automation scripts for server administration, CI/CD pipeline orchestration,
+              cron maintenance, log parsing, and system bootstrap. Deeply practiced in defensive scripting, exit codes,
+              and text stream manipulation.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#9DB2BF]/40">
+            <p class="text-xs font-bold text-[#526D82] uppercase tracking-wider mb-2">Key Competencies:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">POSIX
+                Compliance</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">awk
+                / sed / grep</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Task
+                Automation</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Defensive
+                Scripting</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-[#9DB2BF]/50 hover:border-[#27374D] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="p-3 bg-[#27374D] text-[#DDE6ED] rounded-xl text-lg font-mono font-bold group-hover:bg-[#526D82] transition-colors">
+                LX
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#526D82] bg-white/70 px-2.5 py-1 rounded-full border border-[#9DB2BF]/40">
+                Systems
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors">
+              Linux Administration
+            </h3>
+
+            <p class="text-[#27374D] text-base leading-relaxed">
+              Comprehensive systems engineering across Debian, Ubuntu, and enterprise Linux distributions. Proficient in
+              systemd daemon services, user access controls (RBAC/sudoers), storage &amp; volume layout, networking
+              stack, firewalls, and OS hardening.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#9DB2BF]/40">
+            <p class="text-xs font-bold text-[#526D82] uppercase tracking-wider mb-2">Key Competencies:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">systemd
+                Daemons</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">OS
+                Hardening</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">UFW
+                / iptables</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Performance
+                Tuning</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-[#9DB2BF]/50 hover:border-[#27374D] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="p-3 bg-[#27374D] text-[#DDE6ED] rounded-xl text-lg font-mono font-bold group-hover:bg-[#526D82] transition-colors">
+                IaC
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#526D82] bg-white/70 px-2.5 py-1 rounded-full border border-[#9DB2BF]/40">
+                Architecture
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors">
+              Infrastructure as Code
+            </h3>
+
+            <p class="text-[#27374D] text-base leading-relaxed">
+              Treating systems architecture with software engineering discipline. Advocating for immutable
+              infrastructure paradigms, version-controlled repository workflows, automated pre-flight linting,
+              deterministic environment parity, and zero snowflake configurations.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#9DB2BF]/40">
+            <p class="text-xs font-bold text-[#526D82] uppercase tracking-wider mb-2">Key Competencies:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">GitOps
+                Workflows</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Immutable
+                Infra</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Environment
+                Parity</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Automated
+                Validation</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-[#9DB2BF]/50 hover:border-[#27374D] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="p-3 bg-[#27374D] text-[#DDE6ED] rounded-xl text-lg font-mono font-bold group-hover:bg-[#526D82] transition-colors">
+                TR
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#526D82] bg-white/70 px-2.5 py-1 rounded-full border border-[#9DB2BF]/40">
+                Analysis
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors">
+              Technical Research
+            </h3>
+
+            <p class="text-[#27374D] text-base leading-relaxed">
+              Executing thorough investigative research into systems architecture, emerging cloud tooling, security
+              vulnerabilities, and deployment patterns. Translating technical findings into actionable documentation,
+              runbooks, and proof-of-concept implementations.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#9DB2BF]/40">
+            <p class="text-xs font-bold text-[#526D82] uppercase tracking-wider mb-2">Key Competencies:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Tooling
+                Benchmarks</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Architecture
+                Docs</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">PoC
+                Testing</span>
+              <span
+                class="text-xs bg-white text-[#27374D] font-semibold px-2 py-1 rounded-md border border-[#9DB2BF]/30">Systems
+                Documentation</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#27374D] text-[#DDE6ED] p-6 sm:p-7 rounded-2xl border border-[#526D82] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="p-3 bg-[#526D82] text-white rounded-xl text-lg font-mono font-bold">
+                EP
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#9DB2BF] bg-[#1e2a3b] px-2.5 py-1 rounded-full border border-[#526D82]/50">
+                Philosophy
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-[#DDE6ED] group-hover:text-white transition-colors">
+              Engineering Principles
+            </h3>
+
+            <p class="text-[#DDE6ED]/90 text-base leading-relaxed">
+              Striving for zero manual overhead. Every server configuration should be auditable in source control, every
+              deployment should be repeatable on demand, and every architectural choice should be grounded in evidence
+              and measurable results.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#526D82]/60">
+            <p class="text-xs font-bold text-[#9DB2BF] uppercase tracking-wider mb-2">Guiding Standards:</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="text-xs bg-[#1e2a3b] text-[#DDE6ED] font-semibold px-2 py-1 rounded-md border border-[#526D82]">Zero
+                Snowflakes</span>
+              <span
+                class="text-xs bg-[#1e2a3b] text-[#DDE6ED] font-semibold px-2 py-1 rounded-md border border-[#526D82]">Least
+                Privilege</span>
+              <span
+                class="text-xs bg-[#1e2a3b] text-[#DDE6ED] font-semibold px-2 py-1 rounded-md border border-[#526D82]">Documented
+                Runbooks</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <footer
-      class="bg-[#DDE6ED] text-[#27374D] mt-20 p-2 flex flex-col items-center text-sm md:flex-row md:justify-between"
-    >
-      <p>Designed & Developed by Socee</p>
-      copyright &copy; 2023 Bd.
+    <section class="bg-[#DDE6ED]/60 backdrop-blur-sm p-6 sm:p-10 rounded-3xl border border-[#9DB2BF]/40 space-y-8">
+      <div class="text-center space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#27374D]">
+          How I Approach Engineering
+        </h2>
+        <p class="text-[#526D82] text-base sm:text-lg max-w-xl mx-auto">
+          A structured, repeatable methodology from initial investigation to production delivery.
+        </p>
+      </div>
 
-      <ul class="flex flex-row space-x-9">
-        <li
-          class="text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
-        >
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/80 p-5 rounded-xl border border-[#9DB2BF]/40 space-y-2 shadow-sm">
+          <span class="text-xs font-mono font-bold text-[#526D82] bg-[#DDE6ED] px-2.5 py-1 rounded-md inline-block">
+            STAGE 01
+          </span>
+          <h3 class="text-xl font-bold text-[#27374D]">1. Deep-Dive Research</h3>
+          <p class="text-[#27374D] text-sm leading-relaxed">
+            Evaluating infrastructure requirements, benchmarking candidate tooling, assessing failure modes, and
+            establishing crystal-clear documentation before provisioning.
+          </p>
+        </div>
 
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-        </li>
+        <div class="bg-white/80 p-5 rounded-xl border border-[#9DB2BF]/40 space-y-2 shadow-sm">
+          <span class="text-xs font-mono font-bold text-[#526D82] bg-[#DDE6ED] px-2.5 py-1 rounded-md inline-block">
+            STAGE 02
+          </span>
+          <h3 class="text-xl font-bold text-[#27374D]">2. Codify &amp; Automate</h3>
+          <p class="text-[#27374D] text-sm leading-relaxed">
+            Translating architecture into modular Terraform HCL scripts and defensive Bash automation routines with
+            integrated validation checks.
+          </p>
+        </div>
 
+        <div class="bg-white/80 p-5 rounded-xl border border-[#9DB2BF]/40 space-y-2 shadow-sm">
+          <span class="text-xs font-mono font-bold text-[#526D82] bg-[#DDE6ED] px-2.5 py-1 rounded-md inline-block">
+            STAGE 03
+          </span>
+          <h3 class="text-xl font-bold text-[#27374D]">3. Harden &amp; Operate</h3>
+          <p class="text-[#27374D] text-sm leading-relaxed">
+            Enforcing Linux system security baselines, setting up continuous monitoring and alerting hooks, and
+            delivering comprehensive operator runbooks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="flex flex-col items-center space-y-4 pt-4">
+      <ul class="flex flex-row space-x-7 sm:space-x-9">
         <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#">
-            <i class="fa-brands fa-github"></i>
+          class="text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out duration-200 shadow-sm">
+          <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com"
+            title="soceeenin102@gmail.com">
+            <i class="fa-solid fa-envelope text-2xl"></i>
           </a>
         </li>
       </ul>
-    </footer>
-    <script src="/src/script.js"></script>
-  </body>
+
+      <p class="text-[#9DB2BF] text-xl font-medium">
+        Feel free to <span class="text-[#27374D] font-bold">connect</span> with me at <a
+          href="mailto:soceeenin102@gmail.com"
+          class="text-[#27374D] font-bold underline hover:text-[#526D82] transition-colors">soceeenin102@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer
+    class="bg-[#DDE6ED] text-[#27374D] mt-16 p-4 sm:p-6 flex flex-col items-center text-sm md:flex-row md:justify-between border-t border-[#9DB2BF]/40">
+    <p class="font-medium">Designed &amp; Developed by Success</p>
+    <p class="font-medium my-2 md:my-0">copyright &copy; 2026 Success.</p>
+
+    <ul class="flex flex-row space-x-6">
+      <li
+        class="text-[#9DB2BF] p-2 rounded-xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out duration-150">
+        <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com"
+          title="soceeenin102@gmail.com">
+          <i class="fa-solid fa-envelope text-lg"></i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <script src="../src/script.js"></script>
+</body>
+
 </html>

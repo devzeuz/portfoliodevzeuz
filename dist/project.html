@@ -3,227 +3,357 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="about.html" />
     <link rel="stylesheet" href="./output.css" />
     <link rel="stylesheet" href="../fonts-babr/css/all.css" />
-    <title>Project Page</title>
+    <title>Projects - Success (@devzeuz)</title>
   </head>
-  <body class="transition ease-in-out delay-150">
-    <!-- MOBILE VIEW NAV BAR -->
-
-    <div
-      class="h-28 flex justify-between items-center p-7 md:p-9 bg-[hsl(206,31%,90%)] sticky top-0 z-10"
+  <body class="transition ease-in-out delay-150 min-h-screen flex flex-col justify-between">
+    <!-- NAVIGATION BAR -->
+    <header
+      class="h-24 sm:h-28 flex justify-between items-center px-6 sm:px-10 md:px-14 bg-[hsl(206,31%,90%)]/95 backdrop-blur-md sticky top-0 z-30 shadow-sm border-b border-[#9DB2BF]/30"
     >
-      <div class="font-bold text-[#27374D] text-3xl">Projects</div>
+      <a
+        href="/dist/index.html"
+        class="font-bold text-[#27374D] text-3xl tracking-tight hover:text-[#526D82] transition-colors"
+      >
+        Success
+      </a>
 
-      <div class="">
-        <ul
-          class="hidden sm:flex flex-row space-x-5 font-bold text-xl cursor-pointer"
-        >
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="./index.html">
-              <i class="fa fa-house"></i><span>Home</span>
-            </a>
+      <!-- DESKTOP NAV ITEMS -->
+      <nav class="hidden sm:block">
+        <ul class="flex flex-row space-x-7 lg:space-x-9 font-bold text-lg md:text-xl cursor-pointer">
+          <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+            <a href="/dist/index.html">Home</a>
           </li>
 
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="/dist/about.html">
-              <i class="fa-solid fa-user"></i> <span>About</span></a
-            >
+          <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+            <a href="/dist/about.html">About</a>
           </li>
 
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="/dist/project.html">
-              <i class="fa-solid fa-building"></i><span>Projects</span>
-            </a>
+          <li class="text-[#27374D] border-b-2 border-[#27374D] pb-0.5">
+            <a href="/dist/project.html">Projects</a>
           </li>
 
-          <li class="hover:text-[#526D82] text-[#27374D]">
-            <a href="#">
-              <i class="fa-solid fa-file"></i><span>Resume</span>
-            </a>
+          <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+            <a href="#">Resume</a>
           </li>
         </ul>
-      </div>
+      </nav>
 
-      <div
-        class="text-[#27374D] hover:text-[#526D82] sm:justify-end cursor-pointer md:hidden"
+      <!-- MOBILE HAMBURGER BUTTON -->
+      <button
+        type="button"
+        aria-label="Toggle navigation menu"
+        class="text-[#27374D] hover:text-[#526D82] text-2xl cursor-pointer sm:hidden focus:outline-none"
         id="hamburger"
       >
         <i class="fa fa-hamburger"></i>
-      </div>
-    </div>
+      </button>
+    </header>
 
-    <!-- DESKTOP VIEW NAV BAR -->
+    <!-- MOBILE DROPDOWN MENU -->
     <div
-      class="md:hidden hidden flex flex-col items-center bg-[#DDE6ED] min-h-screen sticky top-28"
+      class="hidden flex-col items-center bg-[#DDE6ED] min-h-screen sticky top-24 z-20"
       id="ul"
     >
-      <ul class="mt-44 space-y-6">
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="./about.html">
-            <i class="fa fa-house"></i><span>Home</span>
-          </a>
+      <ul class="mt-28 space-y-7 text-center font-bold text-2xl">
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="/dist/index.html">Home</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="/dist/about.html">
-            <i class="fa-solid fa-user"></i><span>About</span>
-          </a>
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="/dist/about.html">About</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="/dist/project.html">
-            <i class="fa-solid fa-building"></i><span>Projects</span>
-          </a>
+        <li class="text-[#526D82] font-extrabold">
+          <a href="/dist/project.html">Projects</a>
         </li>
 
-        <li class="hover:text-[#526D82] text-[#27374D]">
-          <a href="#"> <i class="fa-solid fa-file"></i><span>Resume</span> </a>
+        <li class="hover:text-[#526D82] text-[#27374D] transition-colors">
+          <a href="#">Resume</a>
         </li>
       </ul>
 
       <footer
-        class="bg-[#DDE6ED] text-[#27374D] pt-36 p-2 flex flex-col items-center text-sm md:flex-row md:justify-between"
+        class="bg-[#DDE6ED] text-[#27374D] pt-24 p-2 flex flex-col items-center text-sm"
       >
-        <p>Designed & Developed by Socee</p>
-        copyright &copy; 2023 Bd.
+        <p>Designed &amp; Developed by Success</p>
+        <p>copyright &copy; 2026 Success.</p>
 
-        <ul class="flex flex-row space-x-9">
+        <ul class="flex flex-row space-x-6 mt-4">
           <li
-            class="text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
+            class="text-[#9DB2BF] bg-[#27374D] p-3 rounded-xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition"
           >
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </li>
-
-          <li
-            class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-          >
-            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-          </li>
-
-          <li
-            class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-          >
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
+            <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com" title="soceeenin102@gmail.com">
+              <i class="fa-solid fa-envelope text-lg"></i>
             </a>
           </li>
         </ul>
       </footer>
     </div>
 
-    <section class="mt-16 flex flex-row justify-center p-9">
-      <div>
-        <ul class="flex sm:flex flex-col space-y-5 md:hidden mt-5">
-          <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
-          >
-            <a href="#">
-              <i class="fa fa-home-user"></i>
+    <main class="flex-grow max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-10 sm:py-14 space-y-12 sm:space-y-16">
+      <section class="text-center space-y-3">
+        <div class="inline-block px-4 py-1 rounded-full bg-[#DDE6ED] text-[#27374D] font-bold text-sm border border-[#9DB2BF]/60 tracking-wider uppercase">
+          Featured Engineering Work
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#27374D] tracking-tight">
+          Projects &amp; Deployments
+        </h1>
+        <p class="text-[#526D82] text-lg sm:text-xl max-w-2xl mx-auto">
+          Production applications and cloud systems featuring live deployments, API integrations, and modern architectures.
+        </p>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm rounded-3xl border border-[#9DB2BF]/50 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#27374D] transition-all duration-300 flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#27374D]/10 border-b border-[#9DB2BF]/30">
+              <img
+                src="../images/project-github-searcher.png"
+                alt="GitHub Profile Explorer Preview"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <span
+                class="absolute top-3 right-3 text-xs font-bold uppercase tracking-wider text-[#DDE6ED] bg-[#27374D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#9DB2BF]/40"
+              >
+                Render • Live
+              </span>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#526D82]">
+                  Developer Tooling &amp; API
+                </span>
+                <h2 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors mt-1">
+                  GitHub Profile Explorer
+                </h2>
+              </div>
+
+              <p class="text-[#27374D] text-base leading-relaxed">
+                An interactive developer discovery tool querying the GitHub REST API. Inspect user repositories, bio details, activity stats, follower metrics, and community engagement in real time.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">React</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">GitHub REST API</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">JavaScript</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 flex items-center gap-3">
+            <a
+              href="https://github-profile-searcher-cz1v.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 text-center py-2.5 px-4 bg-[#27374D] text-[#DDE6ED] rounded-xl font-bold hover:bg-[#526D82] transition-colors shadow-sm text-sm inline-flex items-center justify-center gap-2"
+            >
+              <span>Live Preview</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
             </a>
-          </li>
+          </div>
+        </article>
 
-          <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
-          >
-            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-          </li>
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm rounded-3xl border border-[#9DB2BF]/50 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#27374D] transition-all duration-300 flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#27374D]/10 border-b border-[#9DB2BF]/30">
+              <img
+                src="../images/project-expense-tracker.png"
+                alt="LedgerFlow Expense Tracker Preview"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <span
+                class="absolute top-3 right-3 text-xs font-bold uppercase tracking-wider text-[#DDE6ED] bg-[#27374D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#9DB2BF]/40"
+              >
+                Render • Live
+              </span>
+            </div>
 
+            <div class="p-6 space-y-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#526D82]">
+                  Fintech &amp; Personal Finance
+                </span>
+                <h2 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors mt-1">
+                  LedgerFlow — Expense Tracker
+                </h2>
+              </div>
+
+              <p class="text-[#27374D] text-base leading-relaxed">
+                A sleek personal finance workspace and budget management dashboard. Track cash flow activity, categorize income and expenses, monitor monthly budgets, and analyze spending distribution with zero friction.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">JavaScript</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Financial Analytics</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Responsive UI</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 flex items-center gap-3">
+            <a
+              href="https://expense-tracker-0bsv.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 text-center py-2.5 px-4 bg-[#27374D] text-[#DDE6ED] rounded-xl font-bold hover:bg-[#526D82] transition-colors shadow-sm text-sm inline-flex items-center justify-center gap-2"
+            >
+              <span>Live Preview</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm rounded-3xl border border-[#9DB2BF]/50 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#27374D] transition-all duration-300 flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#27374D]/10 border-b border-[#9DB2BF]/30">
+              <img
+                src="../images/project-pdf-reader.png"
+                alt="TX Read Cloud PDF Reader Preview"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <span
+                class="absolute top-3 right-3 text-xs font-bold uppercase tracking-wider text-[#DDE6ED] bg-[#27374D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#9DB2BF]/40"
+              >
+                AWS S3 • Cloud App
+              </span>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#526D82]">
+                  Cloud Application
+                </span>
+                <h2 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors mt-1">
+                  TX Read — Cloud PDF Reader
+                </h2>
+              </div>
+
+              <p class="text-[#27374D] text-base leading-relaxed">
+                A personal cloud PDF library deployed on AWS S3 featuring in-browser text simplification, persistent multi-color annotations, and cross-device reading progress synchronization.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">AWS S3</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Cloud Architecture</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">React / Vite</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">PDF.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 flex items-center gap-3">
+            <a
+              href="http://pdf-reader-frontend-522814725174.s3-website-us-east-1.amazonaws.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 text-center py-2.5 px-4 bg-[#27374D] text-[#DDE6ED] rounded-xl font-bold hover:bg-[#526D82] transition-colors shadow-sm text-sm inline-flex items-center justify-center gap-2"
+            >
+              <span>Live Preview</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </article>
+
+        <article
+          class="bg-[#DDE6ED]/70 backdrop-blur-sm rounded-3xl border border-[#9DB2BF]/50 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#27374D] transition-all duration-300 flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#27374D]/10 border-b border-[#9DB2BF]/30">
+              <img
+                src="../images/project-bmi-calculator.png"
+                alt="BMI Health Calculator Preview"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <span
+                class="absolute top-3 right-3 text-xs font-bold uppercase tracking-wider text-[#DDE6ED] bg-[#27374D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#9DB2BF]/40"
+              >
+                Render • Live
+              </span>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#526D82]">
+                  Web Utility &amp; Health Metrics
+                </span>
+                <h2 class="text-2xl font-bold text-[#27374D] group-hover:text-[#526D82] transition-colors mt-1">
+                  BMI Calculator &amp; Converter
+                </h2>
+              </div>
+
+              <p class="text-[#27374D] text-base leading-relaxed">
+                A clean, responsive body mass index assessment application with integrated dual-unit conversion modules (kg/lbs, feet/cm), instant BMI classification, and real-time state resets.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">JavaScript</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Algorithms</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">Responsive UI</span>
+                <span class="text-xs bg-white text-[#27374D] font-semibold px-2.5 py-1 rounded-md border border-[#9DB2BF]/40">CSS3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 flex items-center gap-3">
+            <a
+              href="https://bmi-calculator-sample.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 text-center py-2.5 px-4 bg-[#27374D] text-[#DDE6ED] rounded-xl font-bold hover:bg-[#526D82] transition-colors shadow-sm text-sm inline-flex items-center justify-center gap-2"
+            >
+              <span>Live Preview</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section class="flex flex-col items-center space-y-4 pt-6">
+        <ul class="flex flex-row space-x-7 sm:space-x-9">
           <li
-            class="transition ease-in-out delay-300 hover:text-[#526D82] text-[#27374D]"
+            class="text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out duration-200 shadow-sm"
           >
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
+            <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com" title="soceeenin102@gmail.com">
+              <i class="fa-solid fa-envelope text-2xl"></i>
             </a>
           </li>
         </ul>
-      </div>
 
-      <div
-        class="flex flex-col items-center md:flex-row-reverse md:px-36 md:justify-between"
-      >
-        <img
-          src="../images/3d-view-laptop-device.jpg"
-          alt="photo"
-          class="transition ease-in delay-300 rounded-full w-40 sm:w-40 md:w-96 border-solid border-4 border-[#9DB2BF] hover:border-[#27374D]"
-        />
+        <p class="text-[#9DB2BF] text-xl font-medium">
+          Feel free to <span class="text-[#27374D] font-bold">connect</span> with me at <a href="mailto:soceeenin102@gmail.com" class="text-[#27374D] font-bold underline hover:text-[#526D82] transition-colors">soceeenin102@gmail.com</a>
+        </p>
+      </section>
+    </main>
 
-        <div class="flex flex-col items-center mt-11">
-          <h1 class="text-[#27374D] font-bold text-5xl cursor-pointer">
-            This page is under development, But you can view some of my work on
-            my twitter the link has been provided below
-          </h1>
-
-          <p class="text-[#9DB2BF]">...@devzeuz</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="flex flex-col items-center space-y-8">
-      <p class="text-3xl font-bold text-[#27374D]">FIND ME ON</p>
-
-      <ul class="flex flex-row space-x-9">
-        <li
-          class="text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
-        >
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
-
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-        </li>
-
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] bg-[#27374D] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-      </ul>
-      <p class="text-[#9DB2BF] text-xl">
-        Feel free to <span class="text-[#27374D]">connect</span> with me...
-      </p>
-    </section>
-
+    <!-- FOOTER -->
     <footer
-      class="bg-[#DDE6ED] text-[#27374D] mt-20 p-2 flex flex-col items-center text-sm md:flex-row md:justify-between"
+      class="bg-[#DDE6ED] text-[#27374D] mt-16 p-4 sm:p-6 flex flex-col items-center text-sm md:flex-row md:justify-between border-t border-[#9DB2BF]/40"
     >
-      <p>Designed & Developed by Socee</p>
-      copyright &copy; 2023 Bd.
+      <p class="font-medium">Designed &amp; Developed by Success</p>
+      <p class="font-medium my-2 md:my-0">copyright &copy; 2026 Success.</p>
 
-      <ul class="flex flex-row space-x-9">
+      <ul class="flex flex-row space-x-6">
         <li
-          class="text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out delay-150"
+          class="text-[#9DB2BF] p-2 rounded-xl hover:bg-[#9DB2BF] hover:text-[#27374D] transition ease-in-out duration-150"
         >
-          <a href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
-
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-        </li>
-
-        <li
-          class="transition ease-in-out delay-150 text-[#9DB2BF] p-4 rounded-2xl hover:bg-[#9DB2BF] hover:text-[#27374D]"
-        >
-          <a href="#">
-            <i class="fa-brands fa-github"></i>
+          <a href="mailto:soceeenin102@gmail.com" aria-label="Email soceeenin102@gmail.com" title="soceeenin102@gmail.com">
+            <i class="fa-solid fa-envelope text-lg"></i>
           </a>
         </li>
       </ul>
     </footer>
-    <script src="/src/script.js"></script>
+
+    <script src="../src/script.js"></script>
   </body>
 </html>

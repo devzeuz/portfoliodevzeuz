@@ -1,15 +1,17 @@
 {
-  "name": "tailwindcss",
+  "name": "devzeuz-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio of Success (@devzeuz) - Systems & Software Engineer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss build ./src/input.css -o ./dist/output.css"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "start": "python3 -m http.server 5050",
+    "serve": "python3 -m http.server 5050"
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.3"
+  },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
   }

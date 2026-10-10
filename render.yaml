@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: devzeuz-portfolio
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: .
+    routes:
+      - type: redirect
+        source: /
+        destination: /dist/index.html
+      - type: rewrite
+        source: /*
+        destination: /*
